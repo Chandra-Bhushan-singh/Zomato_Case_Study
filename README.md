@@ -1,5 +1,7 @@
 # Zomato_Case_Study
 
+Dataset : https://docs.google.com/spreadsheets/d/1JgNHxTixDA50W1l6pNFmHKRaX1a9QnXrpGLsJtzo6Gg/edit?usp=share_link
+
 1.	Select a particular Database.
 
 
@@ -121,17 +123,20 @@
 
 
 13.	customer favorite food
-              SELECT t1.user_id,t3.f_id, name, count(*) FROM users t1
-              JOIN orders t2
-              ON t1.user_id = t2.user_id
-              JOIN order_details t3
-              ON t2.order_id = t3.order_id
-              GROUP BY t1.user_id, t3.f_id
-              ORDER BY count(*) DESC;
+
+                SELECT t1.user_id,t3.f_id, name, count(*) FROM users t1
+                JOIN orders t2
+                ON t1.user_id = t2.user_id
+                JOIN order_details t3
+                ON t2.order_id = t3.order_id
+                GROUP BY t1.user_id, t3.f_id
+                ORDER BY count(*) DESC;
+              
  ![image](https://user-images.githubusercontent.com/131191068/236332332-214cce73-dc49-4a44-bb9a-0ef3ec84f3b3.png)
 
 
 14.	find most costly restaurant (Avg price/dish).
+
               SELECT r_name,SUM(price)/COUNT(*) AS 'Avg_price' FROM menu t1
               JOIN restaurants t2
               ON t1.r_id = t2.r_id
@@ -141,6 +146,7 @@
 
 
 15.	find delivery partner compensation using the formula (#deveveries * 100 + 1000*avg_rating)
+
              SELECT partner_name,COUNT(*) * 100  + AVG(delivery_rating)*1000 AS 'salary'
              FROM orders t1
              JOIN delivery_partner t2
@@ -151,6 +157,7 @@
 
 
 19. find all the veg restaurants.
+
              SELECT * FROM menu t1
              JOIN food t2 
              ON t1.f_id = t2.f_id
@@ -161,7 +168,8 @@
 ![image](https://user-images.githubusercontent.com/131191068/236332682-2a83af4f-77fb-4dcd-aa53-36ae54e7fac8.png)
  
 
-20. Find min and max order value for all the customers.
+20. Find min and max order value for all the customers
+
              SELECT name,MIN(amount),MAX(amount),AVG(amount) FROM orders t1
              JOIN users t2
              ON t1.user_id = t2.user_id
