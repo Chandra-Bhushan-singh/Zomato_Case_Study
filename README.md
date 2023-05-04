@@ -12,6 +12,11 @@
 3.	return a random records.
     SELECT * FROM users
     ORDER BY rand() LIMIT 5
+    
+    ![image](https://user-images.githubusercontent.com/131191068/236327664-78bdeab4-6d46-4964-9ec8-66f66a916732.png)
+
+
+
 
  
 4.	Find null values.
