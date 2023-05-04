@@ -5,6 +5,7 @@
 
 2.	Count number of rows.
            Select count(*) from orders
+![image](https://user-images.githubusercontent.com/131191068/236327560-6ae3f1bf-56ef-4edf-a604-254e56815b88.png)
 
  
 
