@@ -2,6 +2,10 @@
 
 1.	Select a particular Database.
              Use Zomato
+             
+             
+             
+             
 
 2.	Count number of rows.
            Select count(*) from orders
@@ -23,6 +27,9 @@
       SELECT * FROM orders
       WHERE restaurant_rating IS NULL;
 
+
+![image](https://user-images.githubusercontent.com/131191068/236328328-b9117dd3-dc69-4bf3-81eb-4178f2aba726.png)
+
  
 
 5.	Find the number of order placed by each customer.
@@ -31,12 +38,20 @@
        ON t1.user_id = t2.user_id
        GROUP BY t2.user_id
  
+ 
+ ![image](https://user-images.githubusercontent.com/131191068/236328387-4bcce10a-3e18-49e0-930f-b55170d5606b.png)
+
+ 
 
 6.	Find restaurant with most number of menu items.
 SELECT r_name, Count(*) as 'menu_items' FROM restaurants t1
 JOIN menu t2 
 ON t1.r_id = t2.r_id
 GROUP BY t2.r_id
+
+![image](https://user-images.githubusercontent.com/131191068/236328521-3d900fed-42c0-4e10-aa09-80878d066833.png)
+
+
  
 
 7.	Find number votes and average rating for all the restaurants.
